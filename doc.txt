@@ -1,0 +1,70 @@
+This is the documentation for Nick Learner's Project 6 for Professor Katsila's CS 202-1001 class at UNR,
+due 18 October, 2019.
+
+This documentation page will go through the output line-by-line (unless it's unnecessary), explaining each.
+
+"////////////////////////////////"
+"/////   Constructor Tests  /////" - Nothing to see here.
+"////////////////////////////////"
+
+"Testing Derived Default ctor" - Nothing to see here.
+"Vehicle: Default-ctor" - The Car class's default constructor is being called, which first calls the Vehicle
+class's default constructor and leaves everything unitialized.
+"Car: Default-ctor" - As stated above, the Car class's default constructor was called, which itself outputs
+this line and sets m_throttle to 0.
+
+"Testing Derived Parametrized ctor" - Nothing to see here.
+"Vehicle: Parametrized-ctor" - The Car class's parametrized constructor is being called, which first calls
+the Vehicle class's parametrized constructor, initializing the m_lla array with given values.
+"Car: Parametrized-ctor" - As stated above, the Car class's parametrized constructor was called, which
+itself outputs this line and sets m_throttle to the given value.
+
+"Testing Derived Copy ctor" - Nothing to see here.
+"Vehicle: Copy-ctor" - The Car class's copy constructor is being called, which first calls the Vehicle
+class's copy constructor, copying the m_lla values.
+"Car: Copy-ctor" - As stated above, the Car class's copy constructor was called, which
+itself outputs this line, along with copying the throttle value to the newly created object.
+
+"////////////////////////////////"
+"/////   Polymorphism Tests /////" - Nothing to see here.
+"////////////////////////////////"
+
+"Testing VIRTUAL Move Function for DERIVED Class Objects" - Nothing to see here.
+"Car: DRIVE to destination, with throttle @ 75" - Calls the Move method within the Car class, a virtual
+function from Vehicle, it's parent class, that's implemented in Car.cpp.
+
+"Testing Insertion Operator<< Overload for BASE Class Objects" - Nothing to see here.
+"Car: Throttle: 0 @ [39.54, 119.82, 4500]" - Calls the overloaded insertion operator, which is implemented in
+the base class, but that implementation uses the virtual function serialize, which is redefined in Car.cpp.
+
+
+"///////////////////////////////////////////////////"
+"/////   Polymorphic base Class Pointer Tests  /////" - Nothing to see here.
+"///////////////////////////////////////////////////"
+
+"Testing VIRTUAL Move Function on Base Class Pointers" - Nothing to see here.
+"Car: DRIVE to destination, with throttle @ 75" - Calls the Move method within the Car class, which can be
+done usingbase class pointers thanks to the fact that it's a virtual function.
+"Car: DRIVE to destination, with throttle @ 75"
+"Car: DRIVE to destination, with throttle @ 75" - Does this for two more Car objects.
+
+"Testing Insertion Operator<< Overload for Base Class Pointers" - Nothing to see here.
+"Car: Throttle; 75 @ [37.77, 122.42, 52]" - As in the Polymorphism Tests, the overloaded virtual insertion
+operator is called, and outputs this line.
+
+"Car: Throttle; 75 @ [37.77, 122.42, 52]"
+
+"Car: Throttle; 75 @ [37.77, 122.42, 52]" - The same line is repeated twice, despite each outputting different Car objects, because each Car object has been successfully "Move()"-ed to a specified location.
+
+
+"////////////////////////////"
+"/////    Tests Done    /////" - Nothing to see here.
+"////////////////////////////"
+"Car: Dtor" - The Car object's destructor is called, which only outputs this line.
+"Vehicle: Dtor" - Since the Car Object is derived from the Vehicle class, the Vehicle class's destructor is
+also called.
+"Car: Dtor"
+"Vehicle: Dtor"
+"Car: Dtor"
+"Vehicle: Dtor" - The same process is repeated for the two other Car objects made earlier in the program.
+
